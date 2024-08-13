@@ -1,0 +1,16 @@
+{
+  "name": "ArtesAlm",
+  "version": "1.0.0",
+  "description": "Site de Exibição de Artesanatos do Vale do Jequitinhonha",
+  "type": "module",
+  "main": "content/home.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hotjar/browser": "^1.0.9"
+  }
+}

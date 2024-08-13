@@ -1,0 +1,68 @@
+.slogan {
+    height: initial;
+    width: 50%;
+    margin: auto;
+    font-size: 3.5ch;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.slogan .titulo {
+    font-size: 4ch;
+    font-weight: bolder;
+    letter-spacing: 0.13ch;
+}
+
+.slogan .destaque-vale {
+    font-weight: 600;
+    color: var(--overleaf-900);
+    background: -webkit-linear-gradient(
+        135deg,
+        var(--overleaf-900) 0%,
+        var(--overleaf-700) 20%,
+        var(--overleaf-900) 50%,
+        var(--overleaf-700) 80%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.exibicao {
+    display: flex;
+    padding: 4rem;
+    gap: 10rem;
+}
+
+.capa {
+    position: relative;
+    width: 50%;
+    height: fit-content;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    background-color: var(--underground-500);
+    box-shadow: rgba(0, 0, 0, 0.336) 0px 25px 50px -12px;
+}
+
+.capa > div {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #dedede;
+    position: absolute;
+    top: 0.3rem;
+    left: 50%;
+}
+
+.capa .logo {
+    width: 100%;
+}
+
+.exibicao .descricao {
+    width: 60%;
+    padding-right: 2%;
+    font-size: 5ch;
+    text-align: justify;
+    display: flex;
+    align-items: start;
+}

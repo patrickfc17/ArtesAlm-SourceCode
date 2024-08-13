@@ -1,0 +1,33 @@
+{{ $css := resources.Get "css/partials/footer.css" }}
+
+{{ with $css }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{ end }}
+
+{{ $svgList := slice }}
+
+{{ $svgs := slice 
+    (dict "name" "call" "content" "(33) 99871-4642") 
+    (dict "name" "instagram" "content" "@_artesalms") }}
+
+{{ range $svgs }}
+    {{ $svg := resources.Get (printf "%s" .name | printf "%s%s.svg" "svg/") }}
+    {{ $svgList = $svgList | append $svg}}
+{{ end }}
+
+<footer class="footer">
+    <h2>Contatos</h2>
+    <ul>
+        {{ range $key, $svg := $svgList }}
+            {{ with $svg }}
+                <li>
+                    {{ $svgItem := (index $svgs $key) }}
+                    {{ with $svgItem }}
+                        <img class="icon" src="{{ $svg.RelPermalink }}" alt="{{ $svgItem.content }}" />
+                        <p>{{ $svgItem.content }}</p>
+                    {{ end }}
+                </li>
+            {{ end }}
+        {{ end }}
+    </ul>
+</footer>

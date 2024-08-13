@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.LanguageCode }}">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="timestamp" content="{{ strings.Substr .Date 0 19 }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+            rel="stylesheet"
+        />
+        
+        {{ $globalCss := resources.Get "css/global.css" }}
+        {{ $templateCss := resources.Get (printf "%s" .Kind | printf "%s%s.css" "css/layouts/") }}
+
+        {{ $css := slice $globalCss $templateCss }}
+        {{ range $file := $css }}
+            {{ with $file }}
+                <link rel="stylesheet" href="{{ $file.RelPermalink }}" />
+            {{ end }}
+        {{ end }}
+
+        {{ block "style" . }}{{ end }}
+
+        {{ $scripts := resources.Match "js/*.js" }}
+        {{ range $script := $scripts }}
+            {{ with $script }}
+                <script src="{{ $script.RelPermalink }}" defer></script>
+            {{ end }}
+        {{ end }}
+
+        {{ block "script" . }}{{ end }}
+        <title>
+            {{ .Site.Title }} | {{ .Page.Title }}
+        </title>
+    </head>
+    <body>
+        {{ partial "header" . }}
+        <main onmouseover="hideArtesanatosDropdown()">
+            {{ block "main" . }}{{ end }}
+            {{ partial "exibicao" . }}
+        </main>
+        {{ partial "footer" . }}
+    </body>
+</html>

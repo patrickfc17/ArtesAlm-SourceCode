@@ -1,0 +1,26 @@
+{{ $css := resources.Get "css/partials/header.css" }} {{ with $css }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{ end }}
+
+<header class="header">
+    <ul class="navigation">
+        <li>ArtesAlm</li>
+        <li>
+            <a href="/">Início</a>
+        </li>
+        <li
+            onmouseover="showArtesanatosDropdown()"
+            onclick="showArtesanatosDropdown()"
+        >
+            <p>Artesanatos</p>
+            <ul class="dropdown" onmouseover="showArtesanatosDropdown()" onmouseout="hideArtesanatosDropdown()">
+                {{ $artesanatos := where .Site.RegularPages "Params.tags" "intersect" (slice "artesanato") }}
+                {{ range $artesanato := $artesanatos }}
+                    <li>
+                        <a href="/{{ $artesanato.Params.rota }}">{{ $artesanato.Params.title }}</a>
+                    </li>
+                {{ end }}
+            </ul>
+        </li>
+    </ul>
+</header>

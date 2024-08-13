@@ -1,0 +1,28 @@
+{{ $css := resources.Get "css/partials/exibicao.css" }}
+{{ with $css }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{ end }}
+
+{{ $img := resources.Get (printf "%s" (.Param "capa") | printf "%s%s" "img/") }}
+<section class="slogan">
+    <h1 class="titulo">{{ .Param "titulo" }}</h1>
+    {{ if eq (.Param "titulo") "ArtesAlm" }}
+        <p>
+            Galeria de Artesanatos do <span class="destaque-vale link">Vale do Jequitinhonha</span>. <br>
+            <span>Criatividade</span> em um só lugar
+        </p>
+    {{ end }}
+</section>
+<section class="exibicao">
+    <figure class="capa">
+        <div></div>
+        {{ $alt := .Param "alt" }}
+        {{ with $img }}
+            <img src="{{ $img.RelPermalink }}" alt="{{ $alt }}" class="logo" />
+        {{ end }}
+    </figure>
+    <aside class="descricao">
+        <p>{{ .Param "descricao" }}</p>
+    </aside>
+</section>
+

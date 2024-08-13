@@ -1,3 +1,9 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://localhost:1313'
 languageCode = 'pt-br'
 title = 'ArtesAlm - Artesanato do Vale do Jequitinhonha'
+relativeURLs = true
+[params]
+    titulo = 'ArtesAlm'
+    capa = 'rio-jequitinhonha.jpg'
+    alt = 'Capa da Home Page de Exibição do Vale do Jequitinhonha'
+    descricao = 'O Vale do Jequitinhonha é um caleidoscópio cultural, onde tradições seculares se misturam à vida contemporânea. A aridez do sertão contrasta com a exuberância da natureza, e a dureza da vida cotidiana é temperada pela alegria e criatividade de seu povo. Tropeiros, artesãos e romeiros são os guardiões de uma história rica e complexa, marcada pela luta pela sobrevivência e pela busca por um futuro mais justo.'
