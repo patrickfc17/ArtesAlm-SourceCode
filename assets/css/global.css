@@ -49,8 +49,8 @@ footer {
 
 .link:hover {
     cursor: pointer;
-    filter: brightness(80%);
-    transition: filter 250ms ease-in-out;
+    filter: brightness(60%);
+    transition: filter 200ms ease-in-out;
 }
 
 .link:active {

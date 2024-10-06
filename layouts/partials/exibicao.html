@@ -8,7 +8,9 @@
     <h1 class="titulo">{{ .Param "titulo" }}</h1>
     {{ if eq (.Param "titulo") "ArtesAlm" }}
         <p>
-            Galeria de Artesanatos do <span class="destaque-vale link">Vale do Jequitinhonha</span>. <br>
+            Galeria de Artesanatos do <span class="destaque-vale link">
+                <a href="https://pt.wikipedia.org/wiki/Vale_do_Jequitinhonha" target="_blank">Vale do Jequitinhonha</a>.
+            </span><br>
             <span>Criatividade</span> em um só lugar
         </p>
     {{ end }}

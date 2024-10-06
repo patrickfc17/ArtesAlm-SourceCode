@@ -1,6 +1,6 @@
 .slogan {
     height: initial;
-    width: 50%;
+    width: 55%;
     margin: auto;
     font-size: 3.5ch;
     text-align: center;
@@ -14,7 +14,6 @@
 }
 
 .slogan .destaque-vale {
-    font-weight: 600;
     color: var(--overleaf-900);
     background: -webkit-linear-gradient(
         135deg,
@@ -26,6 +25,11 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.slogan .destaque-vale a {
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .exibicao {
